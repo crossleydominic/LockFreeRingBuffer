@@ -16,7 +16,7 @@ namespace LockFreeRingBuffer.Test
         [Test]
         public void NormalFencePerfTest()
         {
-            long numberOfItems = 100000000;
+            long numberOfItems = 10000000;
 
             ManualResetEvent evt = new ManualResetEvent(false);
 

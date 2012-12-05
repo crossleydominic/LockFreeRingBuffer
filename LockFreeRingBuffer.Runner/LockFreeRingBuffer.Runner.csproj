@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6D13FEB4-0BB0-41A1-87AA-1F5695B94427}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{528780AF-0744-4835-860A-3995B32A22B0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LockFreeRingBuffer.Core</RootNamespace>
-    <AssemblyName>LockFreeRingBuffer.Core</AssemblyName>
+    <RootNamespace>LockFreeRingBuffer.Runner</RootNamespace>
+    <AssemblyName>LockFreeRingBuffer.Runner</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -20,9 +21,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,18 +41,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fences.cs" />
-    <Compile Include="Interop.cs" />
-    <Compile Include="RingBuffer.cs" />
-    <Compile Include="IConsumerBuffer.cs" />
-    <Compile Include="IProducerBuffer.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Debug\LockFreeRingBuffer.Unmanaged32.dll">
-      <Link>LockFreeRingBuffer.Unmanaged32.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LockFreeRingBuffer.Core\LockFreeRingBuffer.Core.csproj">
+      <Project>{6d13feb4-0bb0-41a1-87aa-1f5695b94427}</Project>
+      <Name>LockFreeRingBuffer.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LockFreeRingBuffer.Test\LockFreeRingBuffer.Test.csproj">
+      <Project>{2d775ce5-e223-4605-9d08-93691398f03d}</Project>
+      <Name>LockFreeRingBuffer.Test</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

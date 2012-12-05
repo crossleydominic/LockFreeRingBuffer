@@ -8,27 +8,6 @@ using System.Threading.Tasks;
 
 namespace LockFreeRingBuffer.Core
 {
-    public static class Fences
-    {
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void EmitFullFence()
-        {
-            Thread.MemoryBarrier();
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void EmitAcquireFence()
-        {
-            Thread.MemoryBarrier();
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void EmitReleaseFence()
-        {
-            Thread.MemoryBarrier();
-        }
-    }
-
     public class RingBuffer<T> : IProducerBuffer<T>, IConsumerBuffer<T>
     {
         private int _head;
