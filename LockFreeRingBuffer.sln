@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockFreeRingBuffer.Core", "LockFreeRingBuffer.Core\LockFreeRingBuffer.Core.csproj", "{6D13FEB4-0BB0-41A1-87AA-1F5695B94427}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A388EA4F-6B4E-4B15-94D4-A7CD3820C91C} = {A388EA4F-6B4E-4B15-94D4-A7CD3820C91C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockFreeRingBuffer.Test", "LockFreeRingBuffer.Test\LockFreeRingBuffer.Test.csproj", "{2D775CE5-E223-4605-9D08-93691398F03D}"
 EndProject
